@@ -34,7 +34,7 @@ export default async function Home() {
 
   const heroImageUrl = siteSettings?.heroImmagine
     ? urlFor(siteSettings.heroImmagine).width(1920).quality(85).url()
-    : null
+    : undefined
 
   return (
     <>
