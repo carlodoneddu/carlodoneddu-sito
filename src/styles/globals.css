@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=Anton&display=swap');
 
 :root {
-  --nero: #0a0a0a;
-  --bianco: #f5f2eb;
+  --nero: #2d3a4a;
+  --bianco: #e8eef5;
   --oro: #c9a84c;
   --oro-chiaro: #e8d5a3;
-  --grigio: #2a2a2a;
-  --grigio-medio: #555;
-  --grigio-chiaro: #999;
+  --grigio: #3a4a5a;
+  --grigio-medio: #6a7a8a;
+  --grigio-chiaro: #9aaab8;
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
+  --font-title: 'Anton', 'Arial Black', sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -17,7 +18,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--nero);
+  background: #2d3a4a;
   color: var(--bianco);
   font-family: var(--font-body);
   font-weight: 300;
