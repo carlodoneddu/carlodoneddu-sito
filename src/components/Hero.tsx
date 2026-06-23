@@ -30,6 +30,7 @@ export default function Hero({ heroImage }: { heroImage?: string }) {
           z-index: 2;
           padding: 0 2rem 3.5rem;
           width: 100%;
+          text-align: center;
         }
         .hero-nome {
           font-family: 'Anton', 'Arial Black', sans-serif;
@@ -39,7 +40,7 @@ export default function Hero({ heroImage }: { heroImage?: string }) {
           color: #cc1212;
           text-transform: uppercase;
           letter-spacing: 0.02em;
-          text-shadow: 3px 3px 8px rgba(0,0,0,0.5), 1px 1px 0px rgba(0,0,0,0.8);
+          text-shadow: 2px 2px 0px rgba(0,0,0,0.9), 4px 4px 12px rgba(0,0,0,0.7), 0px 0px 30px rgba(0,0,0,0.4);
           opacity: 0;
           animation: fadeUp 0.8s ease-out 0.4s forwards;
           margin-bottom: 0.6rem;
