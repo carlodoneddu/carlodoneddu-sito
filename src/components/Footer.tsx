@@ -3,8 +3,8 @@ export default function Footer() {
     <>
       <style>{`
         footer {
-          background: #050505;
-          border-top: 1px solid #1a1a1a;
+          background: var(--sfondo-alt);
+          border-top: 1px solid rgba(0,0,0,0.1);
           padding: 4rem 0 2rem;
         }
         .footer-inner {
@@ -18,34 +18,32 @@ export default function Footer() {
           font-family: 'Cormorant Garamond', serif;
           font-size: 1.8rem;
           font-weight: 300;
-          color: #f5f2eb;
+          color: var(--testo);
         }
         .footer-ruolo {
           font-size: 0.7rem;
           letter-spacing: 0.2em;
           text-transform: uppercase;
-          color: #444;
+          color: var(--testo-chiaro);
           margin-top: 0.3rem;
         }
-        .footer-contatti {
-          text-align: right;
-        }
+        .footer-contatti { text-align: right; }
         .footer-contatti-titolo {
           font-size: 0.65rem;
           letter-spacing: 0.3em;
           text-transform: uppercase;
-          color: #444;
+          color: var(--testo-chiaro);
           margin-bottom: 0.8rem;
         }
         .footer-email {
           font-family: 'Cormorant Garamond', serif;
           font-size: 1.1rem;
-          color: #c9a84c;
+          color: var(--oro);
           transition: color 0.3s;
         }
-        .footer-email:hover { color: #f5f2eb; }
+        .footer-email:hover { color: var(--testo); }
         .footer-bottom {
-          border-top: 1px solid #1a1a1a;
+          border-top: 1px solid rgba(0,0,0,0.1);
           padding-top: 1.5rem;
           display: flex;
           justify-content: space-between;
@@ -53,7 +51,7 @@ export default function Footer() {
         }
         .footer-copy {
           font-size: 0.7rem;
-          color: #333;
+          color: var(--testo-chiaro);
           letter-spacing: 0.1em;
         }
         @media (max-width: 600px) {
