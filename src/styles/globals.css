@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=Anton&display=swap');
 
 :root {
-  --nero: #2d3a4a;
-  --bianco: #e8eef5;
+  --sfondo: #e0e6ea;
+  --sfondo-alt: #d4dce2;
+  --testo: #1a2530;
+  --testo-medio: #3a5060;
+  --testo-chiaro: #6a8090;
   --oro: #c9a84c;
-  --oro-chiaro: #e8d5a3;
-  --grigio: #3a4a5a;
-  --grigio-medio: #6a7a8a;
-  --grigio-chiaro: #9aaab8;
+  --rosso: #cc1212;
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-title: 'Anton', 'Arial Black', sans-serif;
@@ -18,8 +18,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: #2d3a4a;
-  color: var(--bianco);
+  background: var(--sfondo);
+  color: var(--testo);
   font-family: var(--font-body);
   font-weight: 300;
   line-height: 1.7;
@@ -46,7 +46,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 300;
-  color: var(--bianco);
+  color: var(--testo);
   margin-bottom: 0.5rem;
 }
 
@@ -57,9 +57,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 3rem;
 }
 
-section {
-  padding: 6rem 0;
-}
+section { padding: 6rem 0; }
 
 @media (max-width: 768px) {
   section { padding: 4rem 0; }
