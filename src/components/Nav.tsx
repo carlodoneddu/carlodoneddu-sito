@@ -24,7 +24,7 @@ export default function Nav() {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+          background: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
         }
         .nav-logo {
           font-family: 'Cormorant Garamond', serif;
@@ -42,7 +42,7 @@ export default function Nav() {
           font-size: 0.75rem;
           letter-spacing: 0.15em;
           text-transform: uppercase;
-          color: #999;
+          color: rgba(255,255,255,0.7);
           transition: color 0.3s;
         }
         .nav-links a:hover { color: #c9a84c; }
@@ -66,7 +66,7 @@ export default function Nav() {
           display: none;
           position: fixed;
           inset: 0;
-          background: rgba(10,10,10,0.98);
+          background: rgba(26,37,48,0.97);
           z-index: 99;
           flex-direction: column;
           align-items: center;
@@ -77,7 +77,7 @@ export default function Nav() {
         .nav-mobile a {
           font-family: 'Cormorant Garamond', serif;
           font-size: 2rem;
-          color: #f5f2eb;
+          color: #e0e6ea;
           letter-spacing: 0.1em;
         }
         .nav-mobile a:hover { color: #c9a84c; }
