@@ -4,7 +4,7 @@ export default function Concerti({ data }: { data: any[] }) {
   return (
     <>
       <style>{`
-        .concerti { background: #0a0a0a; }
+        .concerti { background: var(--sfondo); }
         .concerti-lista { max-width: 700px; }
         .concerto-item {
           display: grid;
@@ -12,49 +12,47 @@ export default function Concerti({ data }: { data: any[] }) {
           gap: 1.5rem;
           align-items: center;
           padding: 1.5rem 0;
-          border-bottom: 1px solid #1a1a1a;
+          border-bottom: 1px solid rgba(0,0,0,0.1);
           transition: opacity 0.3s;
         }
-        .concerto-item:hover { opacity: 0.8; }
-        .concerto-data {
-          text-align: center;
-        }
+        .concerto-item:hover { opacity: 0.7; }
+        .concerto-data { text-align: center; }
         .concerto-data-giorno {
           font-family: 'Cormorant Garamond', serif;
           font-size: 2rem;
           font-weight: 300;
-          color: #c9a84c;
+          color: var(--oro);
           line-height: 1;
         }
         .concerto-data-mese {
           font-size: 0.6rem;
           letter-spacing: 0.2em;
           text-transform: uppercase;
-          color: #555;
+          color: var(--testo-chiaro);
         }
         .concerto-titolo {
           font-family: 'Cormorant Garamond', serif;
           font-size: 1.1rem;
-          color: #f5f2eb;
+          color: var(--testo);
           margin-bottom: 0.2rem;
         }
         .concerto-luogo {
           font-size: 0.75rem;
-          color: #555;
+          color: var(--testo-chiaro);
           letter-spacing: 0.05em;
         }
         .concerto-link {
           font-size: 0.65rem;
           letter-spacing: 0.2em;
           text-transform: uppercase;
-          color: #c9a84c;
-          border: 1px solid rgba(201,168,76,0.3);
+          color: var(--oro);
+          border: 1px solid rgba(201,168,76,0.4);
           padding: 0.3rem 0.8rem;
           transition: border-color 0.3s;
         }
-        .concerto-link:hover { border-color: #c9a84c; }
+        .concerto-link:hover { border-color: var(--oro); }
         .concerti-vuoti {
-          color: #333;
+          color: var(--testo-chiaro);
           font-style: italic;
           font-size: 0.9rem;
         }
