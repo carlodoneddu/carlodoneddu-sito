@@ -2,15 +2,13 @@ export default function Hero({ heroImage }: { heroImage?: string }) {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
         .hero {
-          min-height: 100vh;
-          display: flex;
-          align-items: flex-end;
-          justify-content: flex-start;
+          width: 100%;
           position: relative;
           overflow: hidden;
-          background: #2d3a4a;
+          background: #1a2530;
+          min-height: 42vw;
         }
         .hero-bg {
           position: absolute;
@@ -18,70 +16,54 @@ export default function Hero({ heroImage }: { heroImage?: string }) {
           background-size: cover;
           background-position: center center;
           background-repeat: no-repeat;
-          filter: brightness(0.75);
+          filter: brightness(0.88) saturate(1.25);
         }
         .hero-gradient {
           position: absolute;
           inset: 0;
-          background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.45) 80%, rgba(0,0,0,0.7) 100%);
+          background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.65) 78%, rgba(0,0,0,0.85) 100%);
         }
         .hero-content {
-          position: relative;
           z-index: 2;
-          padding: 0 2rem 3.5rem;
+          padding: 0 2rem 3rem;
           width: 100%;
-          text-align: center;
+          position: absolute;
+          bottom: 0;
+          left: 0;
         }
         .hero-nome {
-          font-family: 'Anton', 'Arial Black', sans-serif;
-          font-size: clamp(4rem, 13vw, 10rem);
-          font-weight: 900;
+          font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+          font-size: clamp(3rem, 10vw, 8rem);
+          font-weight: 400;
           line-height: 0.9;
-          color: #cc1212;
+          color: #8b1a1a;
           text-transform: uppercase;
-          letter-spacing: 0.02em;
-          text-shadow: 2px 2px 0px rgba(0,0,0,0.9), 4px 4px 12px rgba(0,0,0,0.7), 0px 0px 30px rgba(0,0,0,0.4);
-          opacity: 0;
-          animation: fadeUp 0.8s ease-out 0.4s forwards;
-          margin-bottom: 0.6rem;
+          letter-spacing: 0.04em;
+          text-shadow: 2px 2px 0px rgba(0,0,0,0.7), 3px 3px 10px rgba(0,0,0,0.5);
+          margin-bottom: 0.5rem;
+          text-align: center;
         }
         .hero-ruoli {
-          font-size: clamp(0.6rem, 1.5vw, 0.85rem);
+          font-size: clamp(0.55rem, 1.2vw, 0.8rem);
           letter-spacing: 0.35em;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.9);
-          opacity: 0;
-          animation: fadeUp 0.8s ease-out 0.7s forwards;
+          color: rgba(255,255,255,0.85);
           font-weight: 300;
           text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+          text-align: center;
+          padding-bottom: 0.5rem;
         }
-        .hero-scroll {
-          position: absolute;
-          bottom: 2rem;
-          right: 2rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 0.5rem;
-          opacity: 0;
-          animation: fadeUp 1s ease-out 1.2s forwards;
+        @media (max-width: 768px) {
+          .hero { min-height: 56vw; }
+          .hero-content { padding: 0 1rem 2rem; }
         }
-        .hero-scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent); animation: scrollLine 2s ease-in-out 1.5s infinite; }
-        .hero-scroll-text { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.35); writing-mode: vertical-rl; }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes scrollLine { 0% { transform: scaleY(0); transform-origin: top; opacity:1; } 50% { transform: scaleY(1); transform-origin: top; opacity:1; } 51% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; opacity:0; } }
-        @media (max-width: 768px) { .hero-content { padding: 0 1.2rem 2.5rem; } .hero-scroll { display: none; } }
       `}</style>
       <section className="hero">
-        <div className="hero-bg" style={{ backgroundImage: heroImage ? `url(${heroImage})` : 'none', background: heroImage ? undefined : '#2d3a4a' }} />
+        <div className="hero-bg" style={{ backgroundImage: heroImage ? `url(${heroImage})` : 'none', background: heroImage ? undefined : '#1a2530' }} />
         <div className="hero-gradient" />
         <div className="hero-content">
           <h1 className="hero-nome">Carlo Doneddu</h1>
           <p className="hero-ruoli">Cantautore · Chitarrista · Compositore</p>
-        </div>
-        <div className="hero-scroll">
-          <div className="hero-scroll-line" />
-          <span className="hero-scroll-text">Scorri</span>
         </div>
       </section>
     </>
