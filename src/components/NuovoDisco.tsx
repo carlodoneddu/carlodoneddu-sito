@@ -3,9 +3,9 @@ export default function NuovoDisco({ data }: { data: any }) {
     <>
       <style>{`
         .nuovo-disco {
-          background: #0d0d0d;
-          border-top: 1px solid #1a1a1a;
-          border-bottom: 1px solid #1a1a1a;
+          background: var(--sfondo-alt);
+          border-top: 1px solid rgba(201,168,76,0.2);
+          border-bottom: 1px solid rgba(201,168,76,0.2);
         }
         .disco-inner {
           display: flex;
@@ -20,25 +20,25 @@ export default function NuovoDisco({ data }: { data: any }) {
           font-size: 0.65rem;
           letter-spacing: 0.35em;
           text-transform: uppercase;
-          color: #c9a84c;
-          border: 1px solid rgba(201,168,76,0.3);
+          color: #cc1212;
+          border: 1px solid rgba(204,18,18,0.4);
           padding: 0.4rem 1.2rem;
           margin-bottom: 2.5rem;
           animation: pulse 3s ease-in-out infinite;
         }
         @keyframes pulse {
-          0%, 100% { border-color: rgba(201,168,76,0.3); }
-          50% { border-color: rgba(201,168,76,0.7); }
+          0%, 100% { border-color: rgba(204,18,18,0.3); }
+          50% { border-color: rgba(204,18,18,0.8); }
         }
         .disco-titolo {
           font-family: 'Cormorant Garamond', serif;
           font-size: clamp(2.5rem, 5vw, 4rem);
           font-weight: 300;
-          color: #f5f2eb;
+          color: var(--testo);
           margin-bottom: 1.5rem;
         }
         .disco-testo {
-          color: #888;
+          color: var(--testo-medio);
           font-size: 1rem;
           line-height: 1.8;
           margin-bottom: 2.5rem;
@@ -47,26 +47,8 @@ export default function NuovoDisco({ data }: { data: any }) {
           font-size: 0.7rem;
           letter-spacing: 0.3em;
           text-transform: uppercase;
-          color: #555;
+          color: var(--testo-chiaro);
         }
       `}</style>
 
-      <section className="nuovo-disco" id="nuovo-disco">
-        <div className="container">
-          <div className="disco-inner">
-            <span className="disco-badge">In arrivo</span>
-            <h2 className="disco-titolo">
-              {data?.titolo || 'Nuovo Disco'}
-            </h2>
-            <p className="disco-testo">
-              {data?.testo || 'Un nuovo capitolo è in preparazione. Un lavoro che attraversa la canzone d\'autore, le radici sarde e il paesaggio sonoro contemporaneo. Presto disponibile.'}
-            </p>
-            {data?.dataUscita && (
-              <p className="disco-data">Uscita prevista: {data.dataUscita}</p>
-            )}
-          </div>
-        </div>
-      </section>
-    </>
-  )
-}
+      <section className="nuovo-disco"
