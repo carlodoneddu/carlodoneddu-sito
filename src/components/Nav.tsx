@@ -1,8 +1,16 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   const links = [
     { href: '#bio', label: 'Bio' },
     { href: '#nuovo-disco', label: 'Nuovo Disco' },
@@ -15,7 +23,20 @@ export default function Nav() {
   return (
     <>
       <style>{`
-        nav { width: 100%; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; background: var(--sfondo); border-bottom: 1px solid rgba(0,0,0,0.08); }
+        nav {
+          position: sticky;
+          top: 0;
+          z-index: 100;
+          width: 100%;
+          padding: 1.2rem 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: var(--sfondo);
+          border-bottom: 1px solid rgba(0,0,0,0.08);
+          transition: box-shadow 0.3s;
+        }
+        nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
         .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; letter-spacing: 0.22em; color: var(--testo); text-transform: uppercase; }
         .nav-links { display: flex; gap: 1.5rem; list-style: none; }
         .nav-links a { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--testo-medio); transition: color 0.3s; }
@@ -28,7 +49,7 @@ export default function Nav() {
         .nav-mobile a:hover { color: var(--oro); }
         @media (max-width: 768px) { .nav-links { display: none; } .nav-burger { display: flex; } }
       `}</style>
-      <nav>
+      <nav className={scrolled ? 'scrolled' : ''}>
         <span className="nav-logo">Carlo Doneddu</span>
         <ul className="nav-links">
           {links.map(l => (<li key={l.href}><a href={l.href}>{l.label}</a></li>))}
