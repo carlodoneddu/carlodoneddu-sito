@@ -15,11 +15,11 @@ export function urlFor(source: any) {
 
 export const bioQuery = `*[_type == "bio"][0]{ nome, sottotitolo, testo, foto }`
 
-export const progettiAttiviQuery = `*[_type == "progetto" && categoria == "attivo"] | order(ordine asc) { _id, titolo, sottotitolo, descrizione, formazioni, immagine }`
+export const progettiAttiviQuery = `*[_type == "progetto" && categoria == "attivo"] | order(ordine asc) { _id, titolo, sottotitolo, descrizione, formazioni, immagine, youtubeId }`
 
-export const progettiPassatiQuery = `*[_type == "progetto" && categoria == "passato"] | order(ordine asc) { _id, titolo, sottotitolo, descrizione, immagine }`
+export const progettiPassatiQuery = `*[_type == "progetto" && categoria == "passato"] | order(ordine asc) { _id, titolo, sottotitolo, descrizione, immagine, youtubeId }`
 
-export const collaborazioniQuery = `*[_type == "progetto" && categoria == "collaborazione"] | order(ordine asc) { _id, titolo, sottotitolo, descrizione, formazione, immagine }`
+export const collaborazioniQuery = `*[_type == "progetto" && categoria == "collaborazione"] | order(ordine asc) { _id, titolo, sottotitolo, descrizione, formazione, immagine, youtubeId }`
 
 export const nuovoDiscoQuery = `*[_type == "nuovoDisco"][0]{ titolo, testo, dataUscita, immagine }`
 
