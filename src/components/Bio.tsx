@@ -7,7 +7,7 @@ export default function Bio({ data }: { data: any }) {
   return (
     <>
       <style>{`
-        .bio { background: var(--sfondo); }
+        .bio { background: var(--sfondo); padding-top: 3rem; }
         .bio-inner {
           display: grid;
           grid-template-columns: 1fr 1fr;
