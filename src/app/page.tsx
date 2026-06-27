@@ -12,7 +12,7 @@ import Footer from '../components/Footer'
 export const revalidate = 60
 
 const siteSettingsQuery = `*[_type == "siteSettings"][0]{ heroImmagine }`
-const discografiaQuery = `*[_type == "disco"] | order(ordine asc) { _id, titolo, anno, link }`
+const discografiaQuery = `*[_type == "disco"] | order(ordine asc) { _id, titolo, anno, link, copertina{ asset->{ _id, url } } }`
 
 async function getData() {
   try {
