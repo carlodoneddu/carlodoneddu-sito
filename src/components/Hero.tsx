@@ -8,7 +8,7 @@ export default function Hero({ heroImage }: { heroImage?: string }) {
           position: relative;
           overflow: hidden;
           background: #1a2530;
-          min-height: 42vw;
+          aspect-ratio: 2.7;
         }
         .hero-bg {
           position: absolute;
@@ -54,8 +54,8 @@ export default function Hero({ heroImage }: { heroImage?: string }) {
           padding-bottom: 0.5rem;
         }
         @media (max-width: 768px) {
-          .hero { min-height: 56vw; }
-          .hero-content { padding: 0 1rem 2rem; }
+          .hero { aspect-ratio: 1.8; }
+          .hero-content { padding: 0 1rem 1.5rem; }
         }
       `}</style>
       <section className="hero">
