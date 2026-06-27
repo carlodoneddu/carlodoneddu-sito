@@ -26,7 +26,7 @@ export default function Hero({ heroImage }: { heroImage?: string }) {
         }
         .hero-nome {
           position: absolute;
-          bottom: 1.5rem;
+          bottom: 18%;
           left: 0;
           width: 100%;
           text-align: center;
