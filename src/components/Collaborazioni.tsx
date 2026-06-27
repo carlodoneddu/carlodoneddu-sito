@@ -1,3 +1,4 @@
+'use client'
 function VideoEmbed({ youtubeId }: { youtubeId?: string }) {
   if (!youtubeId) return null
   return (
@@ -30,9 +31,7 @@ export default function Collaborazioni({ data }: { data: any[] }) {
         <div className="sezione-linea" />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
           {collab.map(c => (
-            <div key={c._id} style={{ background: 'var(--sfondo-alt)', padding: '2rem', borderLeft: '2px solid transparent', transition: 'border-color 0.3s, background 0.3s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--oro)'; (e.currentTarget as HTMLElement).style.background = 'var(--sfondo)'; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'transparent'; (e.currentTarget as HTMLElement).style.background = 'var(--sfondo-alt)'; }}>
+            <div key={c._id} style={{ background: 'var(--sfondo-alt)', padding: '2rem', borderLeft: '2px solid rgba(201,168,76,0.2)' }}>
               <VideoEmbed youtubeId={c.youtubeId} />
               <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.5rem', fontWeight: 300, color: 'var(--testo)', marginBottom: '0.2rem' }}>{c.titolo}</h3>
               {c.sottotitolo && <p style={{ fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--oro)', marginBottom: '1rem' }}>{c.sottotitolo}</p>}
