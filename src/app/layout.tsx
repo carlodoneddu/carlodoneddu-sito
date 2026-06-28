@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import '../styles/globals.css'
-import Stickers from '../components/Stickers'
 
 export const metadata: Metadata = {
   title: 'Carlo Doneddu — Cantautore, Chitarrista, Compositore',
@@ -10,10 +9,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="it">
-      <body>
-        <Stickers />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
