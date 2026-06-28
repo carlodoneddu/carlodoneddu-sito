@@ -20,26 +20,17 @@ export default function Nav() {
     { href: '#concerti', label: 'Concerti' },
     { href: '#contatti', label: 'Contatti' },
   ]
+
   return (
     <>
       <style>{`
-        nav {
-          position: sticky;
-          top: 0;
-          z-index: 100;
-          width: 100%;
-          padding: 1.2rem 2rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background: var(--sfondo);
-          border-bottom: 1px solid rgba(0,0,0,0.08);
-          transition: box-shadow 0.3s;
-        }
+        nav { position: sticky; top: 0; z-index: 100; width: 100%; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: var(--sfondo); border-bottom: 1px solid rgba(0,0,0,0.08); transition: box-shadow 0.3s; }
         nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
-        .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; letter-spacing: 0.22em; color: var(--testo); text-transform: uppercase; }
+        .nav-logo-wrap { display: flex; align-items: center; gap: 0.6rem; }
+        .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; letter-spacing: 0.22em; color: var(--testo); text-transform: uppercase; }
+        .nav-coppola { width: 38px; height: auto; transform: rotate(-8deg); filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.15)); }
         .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-        .nav-links a { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--testo-medio); transition: color 0.3s; }
+        .nav-links a { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--testo-medio); transition: color 0.3s; }
         .nav-links a:hover { color: var(--oro); }
         .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
         .nav-burger span { display: block; width: 24px; height: 1px; background: var(--testo); }
@@ -50,7 +41,10 @@ export default function Nav() {
         @media (max-width: 768px) { .nav-links { display: none; } .nav-burger { display: flex; } }
       `}</style>
       <nav className={scrolled ? 'scrolled' : ''}>
-        <span className="nav-logo">Carlo Doneddu</span>
+        <div className="nav-logo-wrap">
+          <img src="https://cdn.sanity.io/images/5qfj2coi/production/6985a8f37369fb7929c5076ee2b609095a4ec533-1920x1860.png" alt="" className="nav-coppola" />
+          <span className="nav-logo">Carlo Doneddu</span>
+        </div>
         <ul className="nav-links">
           {links.map(l => (<li key={l.href}><a href={l.href}>{l.label}</a></li>))}
         </ul>
